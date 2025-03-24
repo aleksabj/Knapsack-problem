@@ -3,21 +3,21 @@
 ## Description
 This project implements an evolutionary algorithm to solve the 0/1 knapsack problem. The algorithm uses a genetic approach to evolve a population of solutions over multiple generations, optimizing for the highest total value while respecting the weight constraint.
 
-The code is provided with comments to explain what I have done at each step.
+The code contains comments explaining what I have done at each step.
 
 ## Algorithm Details
 ### Encoding of Individuals
-Each individual in the population is represented as a binary string, where each bit corresponds to an item in the knapsack:
+Each individual in the population is represented as a binary string, where each bit corresponds to an item in the knapsack: (`def initialize_population()`)
 - `1` means the item is included in the knapsack.
 - `0` means the item is not included.
 
 ### Genetic Operators
-- **Selection**: Tournament selection is used to choose parents for the next generation.
-- **Crossover**: A one-point crossover method is applied to combine genetic material from two parents.
-- **Mutation**: A mutation operator randomly flips bits in the binary string with a small probability to introduce variation.
+- **Selection**: Tournament selection is used to choose parents for the next generation. (`def tournament_selection()`)
+- **Crossover**: A one-point crossover method is applied to combine genetic material from two parents. (`def crossover()`)
+- **Mutation**: A mutation operator randomly flips bits in the binary string with a small probability of introducing variation. (`def mutate()`)
 
 ### Fitness Function
-The fitness of an individual is calculated as the total value of selected items while ensuring the total weight does not exceed the knapsack’s capacity.
+The fitness of an individual is calculated as the total value of selected items while ensuring the total weight does not exceed the knapsack’s capacity. (`def evaluate()`)
 
 ## Running the Code
 To run the algorithm, ensure you have Python installed. Install dependencies with:
